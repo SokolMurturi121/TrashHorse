@@ -47,6 +47,7 @@
   </ItemGroup>
   <ItemGroup>
      <Compile Include="Assets\BoatMove.cs" />
+     <Compile Include="Assets\Wake.cs" />
      <Compile Include="Assets\Wave.cs" />
  <Reference Include="UnityEngine.UI">
  <HintPath>D:/Users/Rory/Programs/Unity/Editor/Data/UnityExtensions/Unity/GUISystem/UnityEngine.UI.dll</HintPath>

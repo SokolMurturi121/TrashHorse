@@ -1,10 +1,10 @@
 ﻿<Properties StartupItem="Assembly-CSharp.csproj">
   <MonoDevelop.Ide.Workspace ActiveConfiguration="Debug" PreferredExecutionTarget="Unity.Instance.Unity Editor" />
-  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\WaveMove.cs">
+  <MonoDevelop.Ide.Workbench ActiveDocument="Assets\BoatMove.cs">
     <Files>
-      <File FileName="Assets\BoatMove.cs" Line="1" Column="1" />
-      <File FileName="Assets\WaveMove.cs" Line="22" Column="1" />
+      <File FileName="Assets\BoatMove.cs" Line="14" Column="3" />
       <File FileName="Assets\Wave.cs" Line="1" Column="1" />
+      <File FileName="Assets\Wake.cs" Line="24" Column="87" />
     </Files>
   </MonoDevelop.Ide.Workbench>
   <MonoDevelop.Ide.DebuggingService.Breakpoints>
