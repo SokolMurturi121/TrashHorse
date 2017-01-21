@@ -14,21 +14,22 @@ public class BoatMove : MonoBehaviour {
 
 		float x = gameObject.GetComponent<Rigidbody2D> ().velocity.x;
 		float y = gameObject.GetComponent<Rigidbody2D> ().velocity.y;
+        const float torq = 10;
 		//if (x ^ 2 + y ^ 2 > 10) {
 		//GameObject w = Instantiate(Resources.Load("waves")) as GameObject;
 		//w.transform.position = gameObject.transform.position;
 		//}
 
-		if (Input.GetKeyDown (KeyCode.W)) {
-			this.gameObject.GetComponent<Rigidbody2D> ().AddForce (gameObject.transform.right * 60);
+		if (Input.GetKey (KeyCode.W)) {
+			this.gameObject.GetComponent<Rigidbody2D> ().AddForce (gameObject.transform.right * 25);
 		}
-
-		if (Input.GetKeyDown (KeyCode.A)) {
-			gameObject.GetComponent<Rigidbody2D> ().AddTorque (2f);
-		}
+		if (Input.GetKeyDown (KeyCode.A))
+        {
+            gameObject.GetComponent<Rigidbody2D>().AddTorque(torq);
+        }
 
 		if (Input.GetKeyDown (KeyCode.D)) {
-			gameObject.GetComponent<Rigidbody2D> ().AddTorque (-2f);
+			gameObject.GetComponent<Rigidbody2D> ().AddTorque (-torq);
 
 		}
 
