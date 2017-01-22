@@ -8,6 +8,8 @@ public class Wake : MonoBehaviour {
 	public float force;
 	private Vector2 vector_dir;
 
+	public BoatMove boat;
+
 	// Use this for initialization
 	void Start () {
 	
@@ -41,8 +43,12 @@ public class Wake : MonoBehaviour {
 
 		Vector2 dir = (col.gameObject.transform.position - gameObject.transform.position);
 		float dist = Mathf.Sqrt(dir.x*dir.x + dir.y*dir.y);
+			Vector2 vel = boat.GetComponent<Rigidbody2D> ().velocity;
+			float speed = Mathf.Sqrt (vel.x * vel.x + vel.y * vel.y);
 
-		if(dist>0) col.gameObject.GetComponent<Rigidbody2D> ().AddForce(vector_dir*force*1/dist);
+			float forcescale = speed / boat.topspeed;
+
+		if(dist>0) col.gameObject.GetComponent<Rigidbody2D> ().AddForce(vector_dir*force*1/dist*forcescale);
 
 			//(new Vector2(dir.x*2*1/dist,dir.y*2*1/dist));
 		}
