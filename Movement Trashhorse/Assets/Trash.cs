@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Trash : MonoBehaviour {
+public class Trash : Destroyable {
 
 	public int score;
 }

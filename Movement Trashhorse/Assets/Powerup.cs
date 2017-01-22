@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public abstract class Powerup : MonoBehaviour {
+public abstract class Powerup : Destroyable {
 
 	// Use this for initialization
 	void Start () {

@@ -9,6 +9,12 @@ public class BoatMove : MonoBehaviour {
 	public float topspeed;
 	public float toptorque;
 
+	public GhostShip gs;
+	private Vector2 myvel;
+	private float myang;
+	private Vector2 ghostvel;
+	private float ghostang;
+
 	public int maxHP;
 	private int HP;
 
@@ -20,6 +26,10 @@ public class BoatMove : MonoBehaviour {
 		HP = maxHP;
 		bubble = false;
 		mercy = 0;
+
+
+		ghostvel = gs.GetComponent<Rigidbody2D> ().velocity;
+		ghostang = gs.GetComponent<Rigidbody2D> ().angularVelocity;
 	}
 
 	public void Hit(){
@@ -61,6 +71,14 @@ public class BoatMove : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		myvel = GetComponent<Rigidbody2D>().velocity - ghostvel;
+		myang = GetComponent<Rigidbody2D> ().angularVelocity - ghostang;
+
+		ghostvel = gs.GetComponent<Rigidbody2D> ().velocity;
+		ghostang = gs.GetComponent<Rigidbody2D> ().angularVelocity;
+
+
+
 		if (mercy > 0){
 			mercy--;
 	}
@@ -89,10 +107,11 @@ public class BoatMove : MonoBehaviour {
 
 		vel.Normalize ();
 
-		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.right.x * speed, transform.right.y * speed);
+		gameObject.GetComponent<Rigidbody2D> ().velocity = new Vector2 (transform.right.x * speed, transform.right.y * speed);// + gs.GetComponent<Rigidbody2D>().velocity;
 		if (speed > topspeed) {
 			Vector2 newvel = new Vector2 (topspeed * vel.x, topspeed * vel.y);
 			gameObject.GetComponent<Rigidbody2D> ().velocity = newvel;
+
 
 		}
 		//gameObject.GetComponent<Rigidbody2D>().velocity

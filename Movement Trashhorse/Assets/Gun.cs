@@ -2,12 +2,16 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Gun : MonoBehaviour {
+public class Gun : Hazard {
 
 	public int firedelay;
 	public int firerandom;
 	public float firespeed;
 	public int shottimetolive;
+
+
+
+
 
 	private int count;
 	private int tcount;
@@ -29,6 +33,8 @@ public class Gun : MonoBehaviour {
 			Fire ();
 		}
 	}
+
+
 
 	void Fire(){
 

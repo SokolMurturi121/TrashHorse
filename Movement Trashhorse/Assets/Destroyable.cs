@@ -2,7 +2,10 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : Destroyable {
+public class Destroyable : MonoBehaviour {
+
+	public delegate void destroyEvent();
+	public  event destroyEvent destroyed;
 
 	// Use this for initialization
 	void Start () {
@@ -14,15 +17,8 @@ public class Box : Destroyable {
 		
 	}
 
-	void OnCollisionEnter2D(Collision2D col){
-		if (col.gameObject.tag == "Score") {
-			//scoring goes here
-
-			Destroy (col.gameObject);
-
-		}
-
-
+	void OnDestroy(){
+		if (destroyed != null)
+			destroyed();
 	}
-
 }

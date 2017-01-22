@@ -2,7 +2,9 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Box : Destroyable {
+public class GhostShip : MonoBehaviour {
+
+	public BoatMove bm;
 
 	// Use this for initialization
 	void Start () {
@@ -11,18 +13,9 @@ public class Box : Destroyable {
 	
 	// Update is called once per frame
 	void Update () {
-		
-	}
 
-	void OnCollisionEnter2D(Collision2D col){
-		if (col.gameObject.tag == "Score") {
-			//scoring goes here
-
-			Destroy (col.gameObject);
-
-		}
-
+		gameObject.transform.position = bm.transform.position;
+		gameObject.transform.rotation = bm.transform.rotation;
 
 	}
-
 }

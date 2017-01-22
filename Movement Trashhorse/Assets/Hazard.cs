@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Hazard : MonoBehaviour {
+public class Hazard : Destroyable {
 
 
 	public float knockback;
@@ -21,13 +21,16 @@ public class Hazard : MonoBehaviour {
 			col.gameObject.GetComponent<BoatMove> ().Hit ();
 
 
-			/**Vector2 dir = (col.gameObject.transform.position - gameObject.transform.position).normalized;
+
+			Vector2 dir = (col.gameObject.transform.position - gameObject.transform.position).normalized;
 			Vector2 force = new Vector2 (dir.x * knockback, dir.y * knockback);
 
-			Debug.Log (force.x + "    " + force.y);
+
+
+			//Debug.Log (force.x + "    " + force.y);
 
 			//col.gameObject.
-			GameObject.Find("BoatControl").GetComponent<Rigidbody2D> ().AddForce (force, ForceMode2D.Impulse);*/
+			//col.gameObject.GetComponent<BoatMove>().gs.GetComponent<Rigidbody2D> ().AddForce (force, ForceMode2D.Impulse);
 
 
 		}

@@ -15,7 +15,7 @@ public class Bubbler : Powerup {
 	}
 
 	protected override void PowerEffect(Collision2D col){
-		if (col.gameObject.layer == 8) {
+		if (col.gameObject.tag == "Player") {
 			BoatMove boat = col.gameObject.GetComponent<BoatMove> ();
 			boat.Bubble ();
 			}
